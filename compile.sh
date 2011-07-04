@@ -1,0 +1,2 @@
+cd opentestbed
+ant build

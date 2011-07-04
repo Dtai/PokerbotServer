@@ -1,0 +1,27 @@
+#gameStartEvent
+#stageEvent 0, board 
+#actionEvent 1 action:5 (toCall: 0.0, amount:0.01)
+#gameStateChanged
+#actionEvent 2 action:6 (toCall: 0.0, amount:0.02)
+#gameStateChanged
+#dealHoleCardsEvent
+#actionEvent 0 action:0 (toCall: 0.02, amount:0.0)
+#gameStateChanged
+#actionEvent 1 action:2 (toCall: 0.01, amount:0.0)
+#gameStateChanged
+#actionEvent 2 action:1 (toCall: 0.0, amount:0.0)
+#gameStateChanged
+#stageEvent 1, board 4d 2d 7h
+#actionEvent 1 action:3 (toCall: 0.0, amount:0.02)
+#gameStateChanged
+#actionEvent 2 action:4 (toCall: 0.02, amount:9.74)
+#gameStateChanged
+#actionEvent 1 action:2 (toCall: 9.74, amount:0.0)
+#gameStateChanged
+#showdownEvent: Ah7c seat:2
+#showdownEvent: As7d seat:1
+#stageEvent 2, board 4d 2d 7h 5h
+#stageEvent 3, board 4d 2d 7h 5h Kh
+#winEvent 1,  amount 9.78, hand a pair of Sevens with a Ace King Five kicker
+#winEvent 2,  amount 9.78, hand a pair of Sevens with a Ace King Five kicker
+#gameOverEvent

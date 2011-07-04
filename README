@@ -1,0 +1,32 @@
+De server: poker tafel emulator
+
+De server is gebaseerd op het OpenTestBed project: http://code.google.com/p/opentestbed/
+
+Compileren
+----------
+Om de server te compileren moet op het systeem 'java' en 'ant' geinstalleerd staan. Compileren doe je vervolgens door het 'compile.sh' script uit te voeren:
+./compile.sh
+
+
+Uitvoeren
+---------
+Het programma kan je uitvoeren als volgt:
+./runserver.sh
+of
+./runserverfull.sh
+
+De server draait per default op poort 20000
+
+
+Meer informatie over de implementatie
+-------------------------------------
+De code van het opentestbed project is uitgebreid om een prolog bots te ondersteunen.
+
+Via het netwerk kan een prolog bot (een set van regels in prolog formaat) naar de server gestuurd worden, deze zal bij elke zet de prolog speler evalueren en de eerste regel die waar evalueert uitvoeren.
+
+Zie features.txt voor de lijst van prolog predicaten die de server ondersteunt.
+
+
+Bij problemen of vragen kan je mailen naar:
+"Guy Van den Broeck" <guy.vandenbroeck@cs.kuleuven.be>
+of "Tias Guns" <Tias.Guns@cs.kuleuven.be>

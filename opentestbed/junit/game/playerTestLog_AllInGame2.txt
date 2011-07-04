@@ -1,0 +1,41 @@
+#gameStartEvent
+#stageEvent 0, board 
+#actionEvent 0 action:5 (toCall: 0.0, amount:0.01)
+#gameStateChanged
+#actionEvent 1 action:6 (toCall: 0.0, amount:0.02)
+#gameStateChanged
+#dealHoleCardsEvent
+#actionEvent 2 action:2 (toCall: 0.02, amount:0.0)
+#gameStateChanged
+#actionEvent 3 action:0 (toCall: 0.02, amount:0.0)
+#gameStateChanged
+#actionEvent 0 action:2 (toCall: 0.01, amount:0.0)
+#gameStateChanged
+#actionEvent 1 action:1 (toCall: 0.0, amount:0.0)
+#gameStateChanged
+#stageEvent 1, board 2d 3d Td
+#actionEvent 0 action:3 (toCall: 0.0, amount:0.02)
+#gameStateChanged
+#actionEvent 1 action:0 (toCall: 0.02, amount:0.0)
+#gameStateChanged
+#actionEvent 2 action:4 (toCall: 0.02, amount:0.03)
+#gameStateChanged
+#actionEvent 0 action:4 (toCall: 0.03, amount:0.15)
+#gameStateChanged
+#actionEvent 2 action:4 (toCall: 0.15, amount:0.83)
+#gameStateChanged
+#actionEvent 0 action:2 (toCall: 0.83, amount:0.0)
+#gameStateChanged
+#stageEvent 2, board 2d 3d Td 6h
+#actionEvent 0 action:1 (toCall: 0.0, amount:0.0)
+#gameStateChanged
+#actionEvent 2 action:3 (toCall: 0.0, amount:0.71)
+#gameStateChanged
+#actionEvent 0 action:2 (toCall: 0.19, amount:0.0)
+#gameStateChanged
+#actionEvent 2 action:100 (toCall: 0.0, amount:0.52)
+#showdownEvent: 8hQc seat:2
+#showdownEvent: AsKs seat:0
+#stageEvent 3, board 2d 3d Td 6h Ac
+#winEvent 0,  amount 2.5, hand a pair of Aces with a King Ten Six kicker
+#gameOverEvent

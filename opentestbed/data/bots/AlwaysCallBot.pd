@@ -1,0 +1,16 @@
+# All plug-ins must run through the following class:
+PLAYER_CLASS=PlugInOpponent
+
+# put your bot's full class name here:
+BOT_PLAYER_CLASS=bots.demobots.AlwaysCallBot
+
+# Your Bot's name:
+PLAYER_NAME=AlwaysCallBot
+
+# Your bot engine name:
+AI_NAME=DemoBot
+
+# Options for your Bot:
+DEBUG=true
+RANDOM_SEED=31313
+ALWAYS_CALL_MODE=false

@@ -1,0 +1,23 @@
+#gameStartEvent
+#stageEvent 0, board 
+#actionEvent 1 action:5 (toCall: 0.0, amount:0.05)
+#gameStateChanged
+#actionEvent 2 action:6 (toCall: 0.0, amount:0.1)
+#gameStateChanged
+#dealHoleCardsEvent
+#actionEvent 0 action:2 (toCall: 0.1, amount:0.0)
+#gameStateChanged
+#actionEvent 1 action:2 (toCall: 0.05, amount:0.0)
+#gameStateChanged
+#actionEvent 2 action:1 (toCall: 0.0, amount:0.0)
+#gameStateChanged
+#stageEvent 1, board Jh 9h 2h
+#actionEvent 1 action:3 (toCall: 0.0, amount:0.1)
+#gameStateChanged
+#actionEvent 2 action:0 (toCall: 0.1, amount:0.0)
+#gameStateChanged
+#actionEvent 0 action:0 (toCall: 0.1, amount:0.0)
+#gameStateChanged
+#actionEvent 1 action:100 (toCall: 0.0, amount:0.1)
+#winEvent 1,  amount 0.3, hand 
+#gameOverEvent

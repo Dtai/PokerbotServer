@@ -1,0 +1,41 @@
+/**
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ * 
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *  
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program; if not, write to the Free Software
+ *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+ */
+package bots.mctsbot.ai.bots.bot;
+
+import bots.mctsbot.client.common.GameStateContainer;
+import bots.mctsbot.common.api.lobby.holdemtable.holdemplayer.context.RemoteHoldemPlayerContext;
+import bots.mctsbot.common.elements.player.PlayerId;
+
+public abstract class AbstractBot implements Bot {
+
+	protected volatile GameStateContainer gameStateContainer;
+	protected volatile RemoteHoldemPlayerContext playerContext;
+
+	public final PlayerId botId;
+
+	public AbstractBot(PlayerId botId, GameStateContainer gameStateContainer, RemoteHoldemPlayerContext playerContext) {
+		this.botId = botId;
+		this.gameStateContainer = gameStateContainer;
+		this.playerContext = playerContext;
+	}
+
+	public abstract void doNextAction();
+
+	@Override
+	public String toString() {
+		return "Abstract bot " + botId;
+	}
+}

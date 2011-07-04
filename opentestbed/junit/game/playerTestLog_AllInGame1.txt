@@ -1,0 +1,26 @@
+#gameStartEvent
+#stageEvent 0, board 
+#actionEvent 1 action:5 (toCall: 0.0, amount:0.05)
+#gameStateChanged
+#actionEvent 2 action:6 (toCall: 0.0, amount:0.1)
+#gameStateChanged
+#dealHoleCardsEvent
+#actionEvent 0 action:2 (toCall: 0.1, amount:0.0)
+#gameStateChanged
+#actionEvent 1 action:2 (toCall: 0.05, amount:0.0)
+#gameStateChanged
+#actionEvent 2 action:1 (toCall: 0.0, amount:0.0)
+#gameStateChanged
+#stageEvent 1, board Jh 9h 2h
+#actionEvent 1 action:3 (toCall: 0.0, amount:0.9)
+#gameStateChanged
+#actionEvent 2 action:2 (toCall: 0.9, amount:0.0)
+#gameStateChanged
+#actionEvent 0 action:0 (toCall: 0.9, amount:0.0)
+#gameStateChanged
+#showdownEvent: 2s8d seat:1
+#showdownEvent: 8hQc seat:2
+#stageEvent 2, board Jh 9h 2h 3c
+#stageEvent 3, board Jh 9h 2h 3c 5h
+#winEvent 2,  amount 2.1, hand a flush, Jack Nine Eight Five Deuce
+#gameOverEvent

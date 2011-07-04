@@ -1,0 +1,35 @@
+Full Tilt Poker Game #1111: Table OpenTestBed - $0.01/$0.02 - No Limit Hold'em - 12:00:00 MEZ - 2000/01/01
+Seat 1: player1 ($0.33)
+Seat 3: player3 ($0.42)
+Seat 5: player5 ($0.42)
+Seat 6: player6 ($0.85)
+Seat 7: player7 ($0.76)
+Seat 8: player8 ($0.40)
+Seat 9: player9 ($1.57)
+player3 posts the small blind of $0.01
+player5 posts the big blind of $0.02
+The button is in seat #1
+*** HOLE CARDS ***
+player6 folds
+player7 folds
+player8 folds
+player9 folds
+player1 calls $0.02
+player3 folds
+player5 checks
+*** FLOP *** [Kd Kh 8h]
+player5 checks
+player1 checks
+*** TURN *** [Kd Kh 8h] [7d]
+player5 checks
+player1 checks
+*** RIVER *** [Kd Kh 8h 7d] [7s]
+player5 checks
+player1 checks
+player5 shows [As 8c]
+player1 mucks
+player5 wins the pot ($0.05)
+*** SUMMARY ***
+Seat 5: player5 showed [As 8c] and won ($0.05)
+
+

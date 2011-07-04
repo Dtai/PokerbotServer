@@ -1,0 +1,52 @@
+Dit is de lijst van prolog predicaten die de server ondersteunt voor de bots.
+
+Binary:
+- ispreflop/0
+  de huidige ronde is preflop
+- ispostflop/0
+  de huidige ronde is flop, turn of river
+- isflop/0
+  de huidige ronde is flop
+- isturn/0
+  de huidige ronde is turn
+- isriver/0
+  de huidige ronde is river
+- isbigblind/0
+  je bent de big blind (tweede in de rij)
+- issmallblind/0
+  je bent de small blind (eerste in de rij)
+- isbutton/0
+  je bent de button (laatste in de rij)
+
+Cards:
+- handkaarten([[C1,C2]]).
+  de kaarten in de hand van de bot
+- tafelkaarten([C,...]).
+  de kaarten op tafel
+- allekaarten([C,...])
+  de kaarten op tafel en in de hand van de bot
+met C=card(R,S)
+met R in [2,14]
+met S in [c,s,h,d]
+
+Numerical:
+- tekort/1
+  hoeveel geld de bot moet bijleggen om te kunnen callen
+- saldo/1
+  hoeveelheid geld die je nog kan inzetten
+- potgrootte/1
+  hoeveelheid geld in de pot
+- actievespelers/1
+  het aantal spelers dat nog niet gefold heeft
+- actievespelersmetgeld/1
+  het aantal spelers dat nog niet gefold heeft of allin is
+- maximalewinst/1
+  de hoeveelheid geld die je maximaal kan winnen dit spel
+- maximaalverlies/1
+  de hoeveelheid geld die je maximaal kan verliezen dit spel
+- minimumraise/1
+  de minimale hoeveelheid geld waarmee je kan raisen
+- maximumraise/1
+  de maximale hoeveelheid geld waarmee je kan raisen
+- aantalraises/1
+  het aantal keer er deze ronde geraised is

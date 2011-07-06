@@ -121,7 +121,7 @@ public class Test {
 		out.close();
 		System.out.println("inputstream closed");
 		
-		Thread.sleep(5000);
+		Thread.sleep(15000);
 		System.out.println("waking up");
 		
 		
@@ -138,7 +138,7 @@ public class Test {
 		socket.shutdownOutput();
 		
 		try {
-			//socket = new Socket("localhost", 20000);
+			//socket = new Socket("joske", 20000);
 			inputStream = socket.getInputStream();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -202,7 +202,7 @@ public class Test {
 		socket.shutdownOutput();
 		
 		try {
-			//socket = new Socket("localhost", 20000);
+			//socket = new Socket("joske", 20000);
 			inputStream = socket.getInputStream();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

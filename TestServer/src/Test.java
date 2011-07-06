@@ -20,7 +20,7 @@ public class Test {
 		
 		//Create socket connection
 		try{
-			  socket = new Socket("localhost", 20000);
+			  socket = new Socket("joske", 20000);
 			  out = new PrintWriter(socket.getOutputStream(), true);
 		}	
 		catch(Exception e){}
@@ -35,6 +35,15 @@ public class Test {
 		     "}" +
 		"}";
 		
+		String startTable2 = 
+			
+			"{\"request\": {" + 
+			     "\"type\": \"startTable\"," +  
+			     "\"tableName\": \"two\" ," +
+			     "\"nbPlayers\": 4 " +
+			     "}" +
+			"}";
+		
 		String addBot = 
 			
 		"{\"request\": { " +
@@ -45,6 +54,28 @@ public class Test {
 		    "\"description\": \"do(call, 1) :- true.\" " +
 		    "}" +
 		"}";
+		
+		String addBot2 = 
+			
+			"{\"request\": { " +
+			    "\"type\": \"joinTable\"," +
+			    "\"tableName\":\"two\" ," +
+			    "\"id\": 3 , " +
+			    "\"playerName\": \"Jonas\","+
+			    "\"description\": \"do(call, 1) :- true.\" " +
+			    "}" +
+			"}";
+		
+		String addBot3 = 
+			
+			"{\"request\": { " +
+			    "\"type\": \"joinTable\"," +
+			    "\"tableName\":\"one\" ," +
+			    "\"id\": 2 , " +
+			    "\"playerName\": \"Jonas\","+
+			    "\"description\": \"do(call, 1) :- true.\" " +
+			    "}" +
+			"}";
 
 		
 		String fetchData = 
@@ -54,36 +85,49 @@ public class Test {
 		    "\"tableName\": one" +
 		    "}" +
 		"}";
+		
+		String fetchData2 = 
+			
+			"{\"request\": { " +
+			    "\"type\": \"fetchData\"," +
+			    "\"tableName\": two" +
+			    "}" +
+			"}";
 
 
 
 			
-			
+		//Start a table
 		out.println(startTable);
 		out.close();
 		System.out.println("inputstream closed");
 		
-		Thread.sleep(15000);
+		Thread.sleep(5000);
 		System.out.println("waking up");
 		
+		
+		//Add a bot to the table
 			  try {
-				  socket = new Socket("localhost", 20000);
+				  socket = new Socket("joske", 20000);
 				out = new PrintWriter(socket.getOutputStream(), true);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		
+		
 		out.println(addBot);
 		
 		out.close();
 		System.out.println("inputstream closed");
 		
-		Thread.sleep(15000);
+		Thread.sleep(5000);
 		System.out.println("waking up");
 		
+		
+		//Fetch data from the table
 			  try {
-				  socket = new Socket("localhost", 20000);
+				  socket = new Socket("joske", 20000);
 				out = new PrintWriter(socket.getOutputStream(), true);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
@@ -102,6 +146,70 @@ public class Test {
 		}
 		
 		String reply = IOUtils.toString(inputStream);
+		
+		inputStream.close();
+		
+		System.out.println(reply);
+		
+		Thread.sleep(5000);
+
+		//Start up a second table
+		try{
+			  socket = new Socket("joske", 20000);
+			  out = new PrintWriter(socket.getOutputStream(), true);
+		}	
+		catch(Exception e){}
+		
+		out.println(startTable2);
+		out.close();
+		
+		Thread.sleep(5000);
+
+		//Add a user to the second table
+		try{
+			  socket = new Socket("joske", 20000);
+			  out = new PrintWriter(socket.getOutputStream(), true);
+		}	
+		catch(Exception e){}
+		
+		out.println(addBot2);
+		out.close();
+		
+		Thread.sleep(5000);
+
+		//Add a second user to the first table
+		
+		try{
+			  socket = new Socket("joske", 20000);
+			  out = new PrintWriter(socket.getOutputStream(), true);
+		}	
+		catch(Exception e){}
+		
+		out.println(addBot3);
+		out.close();
+		Thread.sleep(5000);
+
+		
+		//Receive info from the second table
+		
+		try{
+			  socket = new Socket("joske", 20000);
+			  out = new PrintWriter(socket.getOutputStream(), true);
+		}	
+		catch(Exception e){}
+		
+		out.println(fetchData2);
+		socket.shutdownOutput();
+		
+		try {
+			//socket = new Socket("localhost", 20000);
+			inputStream = socket.getInputStream();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		reply = IOUtils.toString(inputStream);
 		
 		inputStream.close();
 		

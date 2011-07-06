@@ -8,9 +8,9 @@ import java.net.UnknownHostException;
 
 public class Test {
 	
-	public static void main(String[] args){
+	public static void main(String[] args) throws InterruptedException{
 		PrintWriter out = null;
-		Socket socket;
+		Socket socket = null;
 		
 		//Create socket connection
 		try{
@@ -24,10 +24,22 @@ public class Test {
 					
 		"{\"request\": {" + 
 		     "\"type\": \"startTable\"," +  
-		     "\"tableName\": one ," +
+		     "\"tableName\": \"one\" ," +
 		     "\"nbPlayers\": 3 " +
 		     "}" +
 		"}";
+		
+		String addBot = 
+			
+		"{\"request\": { " +
+		    "\"type\": \"joinTable\"," +
+		    "\"tableName\":\"one\" ," +
+		    "\"id\": 1 , " +
+		    "\"playerName\": \"Kwinten\","+
+		    "\"description\": \"do(call, 1) :- true.\" " +
+		    "}" +
+		"}";
+
 		
 		String fetchData = 
 			
@@ -41,8 +53,19 @@ public class Test {
 
 			
 			
-		out.println(startTable);
-	//	out.println(text);
+		//out.println(startTable);
+		//out.close();
+		System.out.println("flushed");
+		
+		/*Thread.sleep(15000);
+		System.out.println("waking up");
+		
+		try{
+			  out = new PrintWriter(socket.getOutputStream(), true);
+		}	
+		catch(Exception e){}*/
+		
+		out.println(addBot);
 	}
 
 

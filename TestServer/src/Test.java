@@ -20,7 +20,7 @@ public class Test {
 		
 		//Create socket connection
 		try{
-			  socket = new Socket("joske", 20000);
+			  socket = new Socket("borgraf", 20000);
 			  out = new PrintWriter(socket.getOutputStream(), true);
 		}	
 		catch(Exception e){}
@@ -49,7 +49,6 @@ public class Test {
 		"{\"request\": { " +
 		    "\"type\": \"joinTable\"," +
 		    "\"tableName\":\"one\" ," +
-		    "\"id\": 1 , " +
 		    "\"playerName\": \"Kwinten\","+
 		    "\"description\": \"do(call, 1) :- true.\" " +
 		    "}" +
@@ -60,7 +59,6 @@ public class Test {
 			"{\"request\": { " +
 			    "\"type\": \"joinTable\"," +
 			    "\"tableName\":\"two\" ," +
-			    "\"id\": 3 , " +
 			    "\"playerName\": \"Jonas\","+
 			    "\"description\": \"do(call, 1) :- true.\" " +
 			    "}" +
@@ -71,7 +69,6 @@ public class Test {
 			"{\"request\": { " +
 			    "\"type\": \"joinTable\"," +
 			    "\"tableName\":\"one\" ," +
-			    "\"id\": 2 , " +
 			    "\"playerName\": \"Jonas\","+
 			    "\"description\": \"do(call, 1) :- true.\" " +
 			    "}" +
@@ -108,7 +105,7 @@ public class Test {
 		
 		//Add a bot to the table
 			  try {
-				  socket = new Socket("joske", 20000);
+				  socket = new Socket("borgraf", 20000);
 				out = new PrintWriter(socket.getOutputStream(), true);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
@@ -124,10 +121,48 @@ public class Test {
 		Thread.sleep(15000);
 		System.out.println("waking up");
 		
+
+
+		//Start up a second table
+		try{
+			  socket = new Socket("borgraf", 20000);
+			  out = new PrintWriter(socket.getOutputStream(), true);
+		}	
+		catch(Exception e){}
+		
+		out.println(startTable2);
+		out.close();
+		
+		Thread.sleep(5000);
+
+		//Add a user to the second table
+		try{
+			  socket = new Socket("borgraf", 20000);
+			  out = new PrintWriter(socket.getOutputStream(), true);
+		}	
+		catch(Exception e){}
+		
+		out.println(addBot2);
+		out.close();
+		
+		Thread.sleep(5000);
+
+		//Add a second user to the first table
+		
+		try{
+			  socket = new Socket("borgraf", 20000);
+			  out = new PrintWriter(socket.getOutputStream(), true);
+		}	
+		catch(Exception e){}
+		
+		out.println(addBot3);
+		out.close();
+		Thread.sleep(5000);
+
 		
 		//Fetch data from the table
 			  try {
-				  socket = new Socket("joske", 20000);
+				  socket = new Socket("borgraf", 20000);
 				out = new PrintWriter(socket.getOutputStream(), true);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
@@ -138,7 +173,7 @@ public class Test {
 		socket.shutdownOutput();
 		
 		try {
-			//socket = new Socket("joske", 20000);
+			//socket = new Socket("borgraf", 20000);
 			inputStream = socket.getInputStream();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -152,48 +187,11 @@ public class Test {
 		System.out.println(reply);
 		
 		Thread.sleep(5000);
-
-		//Start up a second table
-		try{
-			  socket = new Socket("joske", 20000);
-			  out = new PrintWriter(socket.getOutputStream(), true);
-		}	
-		catch(Exception e){}
-		
-		out.println(startTable2);
-		out.close();
-		
-		Thread.sleep(5000);
-
-		//Add a user to the second table
-		try{
-			  socket = new Socket("joske", 20000);
-			  out = new PrintWriter(socket.getOutputStream(), true);
-		}	
-		catch(Exception e){}
-		
-		out.println(addBot2);
-		out.close();
-		
-		Thread.sleep(5000);
-
-		//Add a second user to the first table
-		
-		try{
-			  socket = new Socket("joske", 20000);
-			  out = new PrintWriter(socket.getOutputStream(), true);
-		}	
-		catch(Exception e){}
-		
-		out.println(addBot3);
-		out.close();
-		Thread.sleep(5000);
-
 		
 		//Receive info from the second table
 		
 		try{
-			  socket = new Socket("joske", 20000);
+			  socket = new Socket("borgraf", 20000);
 			  out = new PrintWriter(socket.getOutputStream(), true);
 		}	
 		catch(Exception e){}
@@ -202,7 +200,7 @@ public class Test {
 		socket.shutdownOutput();
 		
 		try {
-			//socket = new Socket("joske", 20000);
+			//socket = new Socket("borgraf", 20000);
 			inputStream = socket.getInputStream();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

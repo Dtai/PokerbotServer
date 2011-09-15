@@ -1,2 +1,2 @@
 cd opentestbed
-ant WW10
+ant PrologBotServer.1

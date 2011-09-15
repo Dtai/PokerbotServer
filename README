@@ -12,8 +12,6 @@ Uitvoeren
 ---------
 Het programma kan je uitvoeren als volgt:
 ./runserver.sh
-of
-./runserverfull.sh
 
 De server draait per default op poort 20000
 

@@ -31,7 +31,8 @@ public class Test {
 		"{\"request\": {" + 
 		     "\"type\": \"startTable\"," +  
 		     "\"tableName\": \"one\" ," +
-		     "\"nbPlayers\": 3 " +
+		     "\"nbPlayers\": 3, " +
+		     "\"password\" : one" +
 		     "}" +
 		"}";
 		
@@ -40,7 +41,8 @@ public class Test {
 			"{\"request\": {" + 
 			     "\"type\": \"startTable\"," +  
 			     "\"tableName\": \"two\" ," +
-			     "\"nbPlayers\": 4 " +
+			     "\"nbPlayers\": 4, " +
+			     "\"password\" : one" +
 			     "}" +
 			"}";
 		

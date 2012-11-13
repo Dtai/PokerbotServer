@@ -19,7 +19,7 @@ case "$1" in
 start)
 	printf "%-50s" "Starting $NAME..."
 	cd $DAEMON_PATH
-	PID=`$DAEMON $DAEMONOPTS > /dev/null 2>&1 & echo $!`
+	PID=`nohup $DAEMON $DAEMONOPTS > /dev/null 2>&1 < /dev/null & echo $!`
 	#echo "Saving PID" $PID " to " $PIDFILE
         if [ -z $PID ]; then
             printf "%s\n" "Fail"
@@ -46,7 +46,7 @@ stop)
             PID=`cat $PIDFILE`
             cd $DAEMON_PATH
         if [ -f $PIDFILE ]; then
-            kill -HUP $PID
+            kill $PID
             printf "%s\n" "Ok"
             rm -f $PIDFILE
         else

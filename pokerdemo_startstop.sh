@@ -14,12 +14,17 @@ NAME=pokerdemo
 DESC="Poker demo app, backend"
 PIDFILE="$HOME/$NAME.pid"
 #SCRIPTNAME=/etc/init.d/$NAME
+DEBUG=false
 
 case "$1" in
 start)
 	printf "%-50s" "Starting $NAME..."
 	cd $DAEMON_PATH
-	PID=`nohup $DAEMON $DAEMONOPTS > /dev/null 2>&1 < /dev/null & echo $!`
+	if $DEBUG; then
+		PID=`nohup $DAEMON $DAEMONOPTS < /dev/null >/tmp/$NAME.out 2>/tmp/$NAME.err & echo $!`
+	else
+		PID=`nohup $DAEMON $DAEMONOPTS < /dev/null > /dev/null 2>&1 & echo $!`
+	fi
 	#echo "Saving PID" $PID " to " $PIDFILE
         if [ -z $PID ]; then
             printf "%s\n" "Fail"

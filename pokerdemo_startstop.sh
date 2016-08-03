@@ -21,7 +21,7 @@ case "$1" in
 start)
 	printf "%-50s" "Starting $NAME..."
 	cd $DAEMON_PATH
-	if $DEBUG; then
+	if $LOGGING; then
 		PID=`nohup $DAEMON $DAEMONOPTS < /dev/null >$LOGDIR/$NAME.out 2>$LOGDIR/$NAME.err & echo $!`
 	else
 		PID=`nohup $DAEMON $DAEMONOPTS < /dev/null > /dev/null 2>&1 & echo $!`
@@ -49,9 +49,11 @@ status)
         fi
 ;;
 stop)
+	    if $LOGGING; then
+            now=$(date +%Y-%m-%d--%H-%M)
+            cp $LOGDIR/$NAME.out $LOGDIR/log-$now.out
+        fi
         printf "%-50s" "Stopping $NAME"
-        now=$(date +%Y-%m-%d--%H-%M)
-        cp $LOGDIR/$NAME.out $LOGDIR/log-$now.out
         cd $DAEMON_PATH
         if [ -f $PIDFILE ]; then
             PID=`cat $PIDFILE`
